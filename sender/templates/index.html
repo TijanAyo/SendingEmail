@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Project 1- Sending Emails {% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="jumbotron">
+		  <h2 class="display-4">Sending Email</h2>
+		  <p class="lead">This is a simple Task to test out my <kbd>Django</kbd> skill</p>
+		  <hr class="my-4">
+		  <samp><p>Difficulty: Beginner</p></samp>
+		</div>
+	</div>
+	<br />
+	<div class="container">
+			<form action="" method="POST">
+				{% csrf_token %}
+				<div class="form-row">
+	    			<div class="form-group col-md-6">
+	      				<label>Name</label>
+	      				<input type="text" class="form-control" name="name">
+	    			</div>
+	    			<div class="form-group col-md-6">
+	      				<label>Email</label>
+	      				<input type="email" class="form-control" name="email" >
+	    			</div>
+	    			<div class="form-group col-12">
+	    				<label>Message</label>
+	    				<textarea class="form-control mb-30" name="message" placeholder="Your Message"></textarea>
+	    			</div>
+	    			<input type="submit" value="Send" class="btn btn-info" />
+	    		</div>
+			</form>
+		</div>
+{% endblock %}
